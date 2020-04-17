@@ -1,0 +1,6 @@
+server:
+    port: 5001
+spring:
+    data:
+        mongodb:
+            uri: mongodb+srv://rajat8527:HDFCILU123$@headout-statz.mongodb.net/dnd?retryWrites=true&w=majority
