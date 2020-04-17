@@ -18,7 +18,7 @@ public class DnDServiceImpl implements DnDService {
     private MongoTemplate mongoTemplate;
 
     @Override
-    public DnD saveData(DnD dnD) {
+    public DnD saveCharacterData(DnD dnD) {
         return dnDRepository.save(dnD);
     }
 

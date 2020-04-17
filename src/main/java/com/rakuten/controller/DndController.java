@@ -4,6 +4,8 @@ import com.rakuten.model.DnD;
 import com.rakuten.service.DnDService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,6 +19,11 @@ public class DndController {
     @GetMapping(value = "/api/getCharacterData")
     public List<DnD> getCharacterData(){
        return dnDService.getAllData();
+    }
+
+    @PostMapping(value = "/api/saveCharacterData")
+    public DnD saveCharacterData(@RequestBody DnD dnD){
+        return dnDService.saveCharacterData(dnD);
     }
 
 }
