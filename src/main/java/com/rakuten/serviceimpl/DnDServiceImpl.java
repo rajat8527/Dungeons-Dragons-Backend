@@ -26,4 +26,9 @@ public class DnDServiceImpl implements DnDService {
     public List<DnD> getAllData() {
         return mongoTemplate.findAll(DnD.class);
     }
+
+    @Override
+    public void deleteAllData() {
+        dnDRepository.deleteAll();
+    }
 }

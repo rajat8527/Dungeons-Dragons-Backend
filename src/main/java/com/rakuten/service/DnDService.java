@@ -7,4 +7,5 @@ import java.util.List;
 public interface DnDService {
     DnD saveCharacterData(DnD dnD);
     List<DnD> getAllData();
+    void deleteAllData();
 }
