@@ -3,7 +3,7 @@ package com.rakuten.constants;
 public class Constants {
     private Constants(){}
     public static final String DND_BASE_URL = "http://www.dnd5eapi.co/api/classes/";
-    public static final String BARBARIAN_IMAGE = "./images//barbarian.png";
+    public static final String BARBARIAN_IMAGE = "./images/barbarian.png";
     public static final String BARD_IMAGE = "./images/barbarian.png";
     public static final String ELF_IMAGE = "./images/elf.png";
     public static final String CLERIC_IMAGE = "./images/cleric.png";
