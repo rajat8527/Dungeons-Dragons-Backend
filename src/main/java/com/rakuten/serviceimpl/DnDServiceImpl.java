@@ -74,8 +74,26 @@ public class DnDServiceImpl implements DnDService {
                return Constants.BARD_IMAGE;
            case "elf":
                return Constants.ELF_IMAGE;
+           case "druid":
+               return Constants.DRUID_IMAGE;
+           case "wizard":
+               return Constants.WIZARD_IMAGE;
+           case "ranger":
+               return Constants.RANGER_IMAGE;
+           case "rogue":
+               return Constants.ROGUE_IMAGE;
+           case "warlock":
+               return Constants.WARLOCK_IMAGE;
+           case "sorcerer":
+               return Constants.SORCERER_IMAGE;
+           case "paladin":
+               return Constants.PALADIN_IMAGE;
+           case "fighter":
+               return Constants.FIGHTER_IMAGE;
+           case "monk":
+               return Constants.MONK_IMAGE;
            default:
-               return Constants.ELF_IMAGE;
+               return "No Image Found";
        }
     }
 
