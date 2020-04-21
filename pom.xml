@@ -90,6 +90,14 @@
                     <outputDir>${project.build.directory}</outputDir>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <appName>rakuten-dnd-character-app</appName>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
