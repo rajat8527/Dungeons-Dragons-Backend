@@ -14,4 +14,5 @@ public class DnD {
    private String races;
    private JSONArray equipments;
    private JSONArray spells;
+   private String imageUrl;
 }

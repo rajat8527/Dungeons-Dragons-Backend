@@ -38,6 +38,7 @@ public class DnDServiceImpl implements DnDService {
         dnD.setSubclasses(fetchSubclasses(dnD));
         dnD.setEquipments(fetchEquipments(dnD));
         dnD.setSpells(fetchSpells(dnD));
+        dnD.setImageUrl(fetchImageUrl(dnD));
         return dnDRepository.save(dnD);
     }
 
@@ -63,6 +64,19 @@ public class DnDServiceImpl implements DnDService {
         }
         JSONObject subclassesObject = (JSONObject) new JSONParser().parse(sb.toString());
         return  (JSONArray) subclassesObject.get("results");
+    }
+
+    private String fetchImageUrl(DnD dnD){
+       switch (dnD.getClasses()){
+           case "barbarian":
+               return Constants.BARBARIAN_IMAGE;
+           case "bard":
+               return Constants.BARD_IMAGE;
+           case "elf":
+               return Constants.ELF_IMAGE;
+           default:
+               return Constants.ELF_IMAGE;
+       }
     }
 
     @Override
