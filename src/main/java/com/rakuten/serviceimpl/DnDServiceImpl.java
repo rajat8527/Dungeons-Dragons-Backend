@@ -72,8 +72,8 @@ public class DnDServiceImpl implements DnDService {
                return Constants.BARBARIAN_IMAGE;
            case "bard":
                return Constants.BARD_IMAGE;
-           case "elf":
-               return Constants.ELF_IMAGE;
+           case "cleric":
+               return Constants.CLERIC_IMAGE;
            case "druid":
                return Constants.DRUID_IMAGE;
            case "wizard":
