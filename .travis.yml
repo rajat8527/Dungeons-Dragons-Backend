@@ -1,27 +1,8 @@
-sudo: required
 language: java
 jdk: oraclejdk8
 
-services:
-  - docker
-
-env:
-  global:
-    - secure: "rajat8527"
-    - secure: "Supernayap@ssw0rd"
-    - secure: "1285084f-d730-4e91-a4dc-c528418450a3"
-    - COMMIT=${TRAVIS_COMMIT::7}
-
 script:
   - ./mvnw clean install -B
-
-after_success:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
-  - export IMAGE_NAME=rajat8527/rakuten-dnd-character-app
-  - docker build -t $IMAGE_NAME:$COMMIT .
-  - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
-  - docker push $IMAGE_NAME
 
 deploy:
   provider: heroku
