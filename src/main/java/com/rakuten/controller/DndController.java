@@ -1,12 +1,15 @@
 package com.rakuten.controller;
 
+import com.rakuten.dto.DnDDTO;
 import com.rakuten.model.DnD;
 import com.rakuten.service.DnDService;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -14,16 +17,16 @@ import java.util.List;
 public class DndController {
 
     @Autowired
-    private DnDService dnDService;
+    DnDService dnDService;
 
     @GetMapping(value = "/api/getCharacterData")
     public List<DnD> getCharacterData(){
-       return dnDService.getAllData();
+        return dnDService.getAllData();
     }
 
     @PostMapping(value = "/api/saveCharacterData")
-    public DnD saveCharacterData(@RequestBody DnD dnD){
-        return dnDService.saveCharacterData(dnD);
+    public DnD saveCharacterData(@RequestBody DnDDTO dnDDTO) throws IOException, ParseException {
+        return dnDService.saveCharacterData(dnDDTO);
     }
 
     @GetMapping(value = "/api/deleteAllData")
