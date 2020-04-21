@@ -2,6 +2,7 @@ package com.rakuten.serviceimpl;
 
 import com.rakuten.constants.Constants;
 import com.rakuten.dto.DnDDTO;
+import com.rakuten.exception.CharacterClassNotFoundException;
 import com.rakuten.model.DnD;
 import com.rakuten.repository.DnDRepository;
 import com.rakuten.service.CallExternalAPIService;
@@ -13,6 +14,7 @@ import org.json.simple.parser.ParseException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -36,7 +38,11 @@ public class DnDServiceImpl implements DnDService {
         dnD.setSubclasses(fetchSubclasses(dnD));
         dnD.setEquipments(fetchEquipments(dnD));
         dnD.setSpells(fetchSpells(dnD));
-        return dnDRepository.save(dnD);
+        try{
+            return dnDRepository.save(dnD);
+        }catch (Exception e){
+            throw new CharacterClassNotFoundException("Provided character class/race not found, please try a valid class/race", HttpStatus.NOT_FOUND);
+        }
     }
 
     private JSONArray fetchEquipments(DnD dnD) throws IOException, ParseException {
