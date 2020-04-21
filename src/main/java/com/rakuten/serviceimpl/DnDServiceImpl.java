@@ -59,7 +59,7 @@ public class DnDServiceImpl implements DnDService {
         String inputUrl = Constants.DND_BASE_URL + dnD.getClasses()+"/subclasses";
         StringBuilder sb = callExternalAPIService.callExternalAPI(inputUrl);
         if(sb.length() == 0){
-            throw new CharacterClassNotFoundException("Provided character class : "+ dnD.getClasses()+ " not found, please try a valid class/race", HttpStatus.NOT_FOUND);
+            throw new CharacterClassNotFoundException("Provided character class : "+ dnD.getClasses()+ " not found, please try a valid class", HttpStatus.NOT_FOUND);
         }
         JSONObject subclassesObject = (JSONObject) new JSONParser().parse(sb.toString());
         return  (JSONArray) subclassesObject.get("results");
