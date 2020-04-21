@@ -14,11 +14,11 @@ This project is a part of Rakuten Technical Assessment Test.
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
-* [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+* [Open API Swagger] - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
 ## Running the application locally
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.rakuten.ConichiApplication` class from your IDE.
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.rakuten.Application` class from your IDE.
 
 - Download the zip or clone the Git repository.
 - Unzip the zip file (if you downloaded one)
