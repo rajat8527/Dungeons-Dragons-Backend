@@ -1,10 +1,22 @@
-#we use java
+sudo: required
 language: java
+jdk: oraclejdk8
 
-#we add the java development kit (jdk)
-jdk:
-- openjdk8
+services:
+  - docker
 
 script:
-#deploying the app on Docker & Heroku
-- mvn clean heroku:deploy
+  - mvn clean install
+
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
+  - export IMAGE_NAME=sivaprasadreddy/jblogger
+  - docker build -t $IMAGE_NAME:$COMMIT .
+  - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: rakuten-dnd-character-app
