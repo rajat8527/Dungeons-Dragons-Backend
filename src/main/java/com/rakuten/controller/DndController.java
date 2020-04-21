@@ -29,7 +29,7 @@ public class DndController {
         return dnDService.saveCharacterData(dnDDTO);
     }
 
-    @GetMapping(value = "/api/deleteAllData")
+    @DeleteMapping(value = "/api/deleteAllData")
     public ResponseEntity<Object> deleteAllData(){
         dnDService.deleteAllData();
         return new ResponseEntity<>("All Data Deleted", HttpStatus.OK);

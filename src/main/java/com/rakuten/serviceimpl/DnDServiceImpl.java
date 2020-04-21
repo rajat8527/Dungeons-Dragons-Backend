@@ -38,11 +38,7 @@ public class DnDServiceImpl implements DnDService {
         dnD.setSubclasses(fetchSubclasses(dnD));
         dnD.setEquipments(fetchEquipments(dnD));
         dnD.setSpells(fetchSpells(dnD));
-        try{
-            return dnDRepository.save(dnD);
-        }catch (Exception e){
-            throw new CharacterClassNotFoundException("Provided character class/race not found, please try a valid class/race", HttpStatus.NOT_FOUND);
-        }
+        return dnDRepository.save(dnD);
     }
 
     private JSONArray fetchEquipments(DnD dnD) throws IOException, ParseException {
@@ -62,6 +58,9 @@ public class DnDServiceImpl implements DnDService {
     private JSONArray fetchSubclasses(DnD dnD) throws IOException, ParseException {
         String inputUrl = Constants.DND_BASE_URL + dnD.getClasses()+"/subclasses";
         StringBuilder sb = callExternalAPIService.callExternalAPI(inputUrl);
+        if(sb.length() == 0){
+            throw new CharacterClassNotFoundException("Provided character class : "+ dnD.getClasses()+ " not found, please try a valid class/race", HttpStatus.NOT_FOUND);
+        }
         JSONObject subclassesObject = (JSONObject) new JSONParser().parse(sb.toString());
         return  (JSONArray) subclassesObject.get("results");
     }
