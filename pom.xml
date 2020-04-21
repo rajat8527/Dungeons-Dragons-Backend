@@ -14,6 +14,21 @@
         <version>2.2.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <docker.image.prefix>rajat8527</docker.image.prefix>
+
+        <!--Not adding artifacts to remote repository-->
+
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <!-- GitHub OAuth token & server -->
+        <github.global.server>github</github.global.server>
+        <!-- Useful for Heroku Deployment -->
+        <full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -90,6 +105,95 @@
                     <outputDir>${project.build.directory}</outputDir>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.9</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                </configuration>
+            </plugin>
+
+            <!-- maven-dependency-plugin useful for creating docker image -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+
+
+                </executions>
+
+            </plugin>
+
+            <!-- Generating github  gh pages & maven project documents  -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <message>Building site for ${project.name} ${project.version}</message>
+                    <server>github</server>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Useful for Heroku Deployment -->
+
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>2.0.11</version>
+                <configuration>
+                    <appName>cicd-spring-boot-java-app</appName>
+                    <processTypes>
+                        <web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+                    </processTypes>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
