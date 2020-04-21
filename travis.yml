@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk8
+deploy:
+  provider: heroku
+  api-key:
+    secure: 1285084f-d730-4e91-a4dc-c528418450a3
+  app: rakuten-dnd-character-app
