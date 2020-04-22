@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,26 +20,17 @@ public class DndController {
     DnDService dnDService;
 
     @GetMapping(value = "/api/getCharacterData")
-    public List<DnD> getCharacterData(HttpServletResponse response){
-        response.setHeader("Access-Control-Allow-Origin","*");
-        response.setHeader("X-Requested-With","XMLHttpRequest");
-        response.setHeader("Origin","https://rakuten-dnd-ui.herokuapp.com");
+    public List<DnD> getCharacterData(){
         return dnDService.getAllData();
     }
 
     @PostMapping(value = "/api/saveCharacterData")
-    public DnD saveCharacterData(@RequestBody DnDDTO dnDDTO, HttpServletResponse response) throws IOException, ParseException {
-        response.setHeader("Access-Control-Allow-Origin","*");
-        response.setHeader("X-Requested-With","XMLHttpRequest");
-        response.setHeader("Origin","https://rakuten-dnd-ui.herokuapp.com");
+    public DnD saveCharacterData(@RequestBody DnDDTO dnDDTO) throws IOException, ParseException {
         return dnDService.saveCharacterData(dnDDTO);
     }
 
     @DeleteMapping(value = "/api/deleteAllData")
-    public ResponseEntity<Object> deleteAllData(HttpServletResponse response){
-        response.setHeader("Access-Control-Allow-Origin","*");
-        response.setHeader("X-Requested-With","XMLHttpRequest");
-        response.setHeader("Origin","https://rakuten-dnd-ui.herokuapp.com");
+    public ResponseEntity<Object> deleteAllData(){
         dnDService.deleteAllData();
         return new ResponseEntity<>("All Data Deleted", HttpStatus.OK);
     }
