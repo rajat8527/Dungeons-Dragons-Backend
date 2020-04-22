@@ -16,6 +16,22 @@ This project is a part of Rakuten Technical Assessment Test.
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Open API Swagger] - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
+## Points covered as per the given tasks
+
+- API Endpoints created for fetching and saving data from database.
+- Spring Cache has been used to implement the caching.
+- MongoDB (Cloud) has been used for database layer.
+- Travis CI integration has been added.
+- Heroku integration added
+- Code published on Github, Travis CI and Heroku.
+- README.md file added.
+
+## Bonus points added
+- Open API Swagger integration added
+- New Relic APM integration added
+- Docker integration added
+- Implemented Custom and Global Exception handling. 
+
 ## Running the application locally
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.rakuten.Application` class from your IDE.
@@ -97,21 +113,6 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 - `resources/` - Contains all the static resources, templates and property files.
 - `resources/application.yml` - It contains application-wide properties. Spring reads the properties defined in this file to configure our application. We can define server’s default port, server’s context path, database URLs etc, in this file.
 - `pom.xml` - contains all the project dependencies
- 
-## Points covered as per the given tasks
-
-- API Endpoints created for fetching and saving data from database.
-- Spring Cache has been used to implement the caching.
-- MongoDB (Cloud) has been used for database layer.
-- Travis CI integration has been added.
-- Heroku integration added
-- Code published on Github, Travis CI and Heroku.
-- README.md file added.
-
-## Bonus points added
-- Open API Swagger integration added
-- New Relic APM integration added
-- Implemented Custom and Global Exception handling. 
 
 ## Additional notes
 
