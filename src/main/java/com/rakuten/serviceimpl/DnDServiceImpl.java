@@ -14,6 +14,7 @@ import org.json.simple.parser.ParseException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -99,6 +100,7 @@ public class DnDServiceImpl implements DnDService {
        }
     }
 
+    @Cacheable("dnd")
     @Override
     public List<DnD> getAllData() {
         return mongoTemplate.findAll(DnD.class);
