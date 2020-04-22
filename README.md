@@ -67,7 +67,12 @@ mvn spring-boot:run
         	"classes": "barbarian",
         	"races":"dragonborn"
         }
-              
+
+
+* Delete All Data API
+  -   Endpoint => localhost:9908/api/deleteAllData
+  -   Request Type => DELETE
+                
 * [Swagger](http://localhost:9908/swagger-ui.html) - Swagger Open API Documentation
 
 ## Files and Directories
