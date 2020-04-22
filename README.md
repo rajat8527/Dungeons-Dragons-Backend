@@ -19,7 +19,6 @@ This project is a part of Rakuten Technical Assessment Test.
 ## Points covered as per the given tasks
 
 - API Endpoints created for fetching and saving data from database.
-- Spring Cache has been used to implement the caching.
 - MongoDB (Cloud) has been used for database layer.
 - Travis CI integration has been added.
 - Heroku integration added
@@ -30,6 +29,7 @@ This project is a part of Rakuten Technical Assessment Test.
 - Open API Swagger integration added
 - New Relic APM integration added
 - Docker integration added
+- Spring Cache has been used to implement the caching.
 - Implemented Custom and Global Exception handling. 
 
 ## Running the application locally
