@@ -18,16 +18,19 @@ public class DndController {
     @Autowired
     DnDService dnDService;
 
+    @CrossOrigin(origins = "https://rakuten-dnd-ui.herokuapp.com")
     @GetMapping(value = "/api/getCharacterData")
     public List<DnD> getCharacterData(){
         return dnDService.getAllData();
     }
 
+    @CrossOrigin(origins = "https://rakuten-dnd-ui.herokuapp.com")
     @PostMapping(value = "/api/saveCharacterData")
     public DnD saveCharacterData(@RequestBody DnDDTO dnDDTO) throws IOException, ParseException {
         return dnDService.saveCharacterData(dnDDTO);
     }
 
+    @CrossOrigin(origins = "https://rakuten-dnd-ui.herokuapp.com")
     @DeleteMapping(value = "/api/deleteAllData")
     public ResponseEntity<Object> deleteAllData(){
         dnDService.deleteAllData();
