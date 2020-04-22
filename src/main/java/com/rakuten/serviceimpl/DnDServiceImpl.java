@@ -13,6 +13,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @CacheConfig
@@ -33,6 +35,9 @@ public class DnDServiceImpl implements DnDService {
 
     @Autowired
     CallExternalAPIService callExternalAPIService;
+
+    @Autowired
+    CacheManager cacheManager;
 
     @Override
     public DnD saveCharacterData(DnDDTO dnDDTO) throws IOException, ParseException {
@@ -109,5 +114,8 @@ public class DnDServiceImpl implements DnDService {
     @Override
     public void deleteAllData() {
         dnDRepository.deleteAll();
+        for(String name:cacheManager.getCacheNames()){
+            Objects.requireNonNull(cacheManager.getCache(name)).clear();            // clear cache by name
+        }
     }
 }
