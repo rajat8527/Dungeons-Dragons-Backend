@@ -106,7 +106,12 @@ public class DnDServiceImpl implements DnDService {
     }
 
     @Override
-    public void deleteAllData() {
+    public void deleteAllCharacters() {
         dnDRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteCharacterById(String id) {
+        dnDRepository.deleteById(id);
     }
 }

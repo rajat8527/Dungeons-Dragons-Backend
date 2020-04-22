@@ -29,10 +29,16 @@ public class DndController {
         return dnDService.saveCharacterData(dnDDTO);
     }
 
-    @DeleteMapping(value = "/api/deleteAllData")
-    public ResponseEntity<Object> deleteAllData(){
-        dnDService.deleteAllData();
+    @DeleteMapping(value = "/api/deleteAllCharacters")
+    public ResponseEntity<Object> deleteAllCharacters(){
+        dnDService.deleteAllCharacters();
         return new ResponseEntity<>("All Data Deleted", HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/api/deleteCharacterById/{id}")
+    public ResponseEntity<Object> deleteAllData(@PathVariable ("id") String id){
+        dnDService.deleteCharacterById(id);
+        return new ResponseEntity<>("Character with id :"+id+" is deleted", HttpStatus.OK);
     }
 
 }

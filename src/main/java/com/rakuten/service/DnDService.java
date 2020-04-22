@@ -10,5 +10,6 @@ import java.util.List;
 public interface DnDService {
     DnD saveCharacterData(DnDDTO dnDDTO) throws IOException, ParseException;
     List<DnD> getAllData();
-    void deleteAllData();
+    void deleteAllCharacters();
+    void deleteCharacterById(String id);
 }
