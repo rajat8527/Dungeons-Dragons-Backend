@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class DndController {
     }
 
     @PostMapping(value = "/api/saveCharacterData")
-    public DnD saveCharacterData(@RequestBody DnDDTO dnDDTO) throws IOException, ParseException {
+    public DnD saveCharacterData(@RequestBody @Valid DnDDTO dnDDTO) throws IOException, ParseException {
         return dnDService.saveCharacterData(dnDDTO);
     }
 
