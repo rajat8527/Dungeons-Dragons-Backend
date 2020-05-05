@@ -1,11 +1,10 @@
-package com.rakuten.serviceimpl;
+package com.rakuten.service.impl;
 
 import com.rakuten.constants.Constants;
 import com.rakuten.dto.DnDDTO;
 import com.rakuten.exception.CharacterClassNotFoundException;
 import com.rakuten.model.DnD;
 import com.rakuten.repository.DnDRepository;
-import com.rakuten.service.CallExternalAPIService;
 import com.rakuten.service.DnDService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -31,7 +30,7 @@ public class DnDServiceImpl implements DnDService {
     MongoTemplate mongoTemplate;
 
     @Autowired
-    CallExternalAPIService callExternalAPIService;
+    CallExternalAPIServiceImpl callExternalAPIService;
 
 
     @Override

@@ -1,4 +1,4 @@
-package com.rakuten.serviceimpl;
+package com.rakuten.service.impl;
 
 import com.rakuten.service.CallExternalAPIService;
 import org.springframework.stereotype.Service;

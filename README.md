@@ -54,11 +54,11 @@ mvn spring-boot:run
 ## Usage
 
 * Get Character Data API
-  -   Endpoint => localhost:9908/api/getCharacterData
+  -   Endpoint => localhost:9908/api/character/
   -   Request Type => GET
 
 * Save Character Data API
-  -   Endpoint => localhost:9908/api/saveCharacterData
+  -   Endpoint => localhost:9908/api/character/
   -   Request Type => POST
   -   Example Input 
       - {
@@ -69,8 +69,12 @@ mvn spring-boot:run
         }
 
 
-* Delete All Data API
-  -   Endpoint => localhost:9908/api/deleteAllData
+* Delete All Character Data API
+  -   Endpoint => localhost:9908/api/character/
+  -   Request Type => DELETE
+  
+* Delete A Character by ID API
+  -   Endpoint => localhost:9908/api/character/{id}
   -   Request Type => DELETE
                 
 * [Swagger](http://localhost:9908/swagger-ui.html) - Swagger Open API Documentation
@@ -98,6 +102,13 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │   └── main
 │       └── resources
 │           ├── application.yml
+├── src
+│   └── test
+│       └── java
+│           └── com.rakuten
+│           └── com.rakuten.controller
+│           └── com.rakuten.service.impl
+│ 
 ├── JRE System Library
 ├── Maven Dependencies
 ├── src
@@ -117,6 +128,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 - `constants` - to define application constants;
 - `resources/` - Contains all the static resources, templates and property files.
 - `resources/application.yml` - It contains application-wide properties. Spring reads the properties defined in this file to configure our application. We can define server’s default port, server’s context path, database URLs etc, in this file.
+
+- `test/` - contains unit tests cases
+
 - `pom.xml` - contains all the project dependencies
 
 ## Additional notes
