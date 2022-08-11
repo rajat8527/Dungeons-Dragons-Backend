@@ -1,6 +1,6 @@
-# Rakuten Technical Challenge
+# Dungeons & Dragons (Backend)
 
-This project is a part of Rakuten Technical Assessment Test. 
+A small spring boot application (REST APIs) to support Dungeons & Dragons React UI project.
 
 ### Prerequisites
 * Git
