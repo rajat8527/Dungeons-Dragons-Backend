@@ -1,4 +1,4 @@
-package com.rakuten.service.impl;
+package com.dnd.service.impl;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;

@@ -1,11 +1,11 @@
-package com.rakuten.service.impl;
+package com.dnd.service.impl;
 
-import com.rakuten.constants.Constants;
-import com.rakuten.dto.DnDDTO;
-import com.rakuten.exception.CharacterClassNotFoundException;
-import com.rakuten.model.DnD;
-import com.rakuten.repository.DnDRepository;
-import com.rakuten.service.DnDService;
+import com.dnd.constants.Constants;
+import com.dnd.dto.DnDDTO;
+import com.dnd.exception.CharacterClassNotFoundException;
+import com.dnd.model.DnD;
+import com.dnd.repository.DnDRepository;
+import com.dnd.service.DnDService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

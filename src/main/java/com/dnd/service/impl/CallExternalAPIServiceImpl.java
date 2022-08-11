@@ -1,6 +1,6 @@
-package com.rakuten.service.impl;
+package com.dnd.service.impl;
 
-import com.rakuten.service.CallExternalAPIService;
+import com.dnd.service.CallExternalAPIService;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;

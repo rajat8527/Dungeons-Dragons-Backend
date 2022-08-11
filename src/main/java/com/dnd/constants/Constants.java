@@ -1,4 +1,4 @@
-package com.rakuten.constants;
+package com.dnd.constants;
 
 public class Constants {
     private Constants(){}

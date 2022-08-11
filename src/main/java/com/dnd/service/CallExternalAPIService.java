@@ -1,4 +1,4 @@
-package com.rakuten.service;
+package com.dnd.service;
 
 import java.io.IOException;
 

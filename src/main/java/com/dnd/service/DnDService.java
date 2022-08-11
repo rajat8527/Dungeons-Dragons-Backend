@@ -1,7 +1,7 @@
-package com.rakuten.service;
+package com.dnd.service;
 
-import com.rakuten.dto.DnDDTO;
-import com.rakuten.model.DnD;
+import com.dnd.dto.DnDDTO;
+import com.dnd.model.DnD;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;

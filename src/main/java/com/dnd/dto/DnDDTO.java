@@ -1,4 +1,4 @@
-package com.rakuten.dto;
+package com.dnd.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

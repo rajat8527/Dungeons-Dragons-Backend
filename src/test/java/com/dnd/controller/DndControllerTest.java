@@ -1,8 +1,8 @@
-package com.rakuten.controller;
+package com.dnd.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rakuten.dto.DnDDTO;
-import com.rakuten.model.DnD;
+import com.dnd.dto.DnDDTO;
+import com.dnd.model.DnD;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

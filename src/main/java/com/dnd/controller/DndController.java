@@ -1,8 +1,8 @@
-package com.rakuten.controller;
+package com.dnd.controller;
 
-import com.rakuten.dto.DnDDTO;
-import com.rakuten.model.DnD;
-import com.rakuten.service.DnDService;
+import com.dnd.dto.DnDDTO;
+import com.dnd.model.DnD;
+import com.dnd.service.DnDService;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

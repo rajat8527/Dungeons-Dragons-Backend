@@ -1,4 +1,4 @@
-package com.rakuten.model;
+package com.dnd.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

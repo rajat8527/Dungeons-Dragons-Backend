@@ -1,4 +1,4 @@
-package com.rakuten.exception;
+package com.dnd.exception;
 
 import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.http.HttpStatus;
