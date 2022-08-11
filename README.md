@@ -16,7 +16,7 @@ A small spring boot application (REST APIs) to support Dungeons & Dragons React 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Open API Swagger] - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
-## Points covered as per the given tasks
+## Points covered
 
 - API Endpoints created for fetching and saving data from database.
 - MongoDB (Cloud) has been used for database layer.
