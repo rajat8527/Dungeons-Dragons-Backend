@@ -34,7 +34,7 @@ A small spring boot application (REST APIs) to support Dungeons & Dragons React 
 
 ## Running the application locally
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.rakuten.Application` class from your IDE.
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.dnd.Application` class from your IDE.
 
 - Download the zip or clone the Git repository.
 - Unzip the zip file (if you downloaded one)
@@ -89,15 +89,15 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── com.rakuten│
-│           ├── com.rakuten.constants
-│           ├── com.rakuten.controller
-│           ├── com.rakuten.dto
-│           ├── com.rakuten.model
-│           ├── com.rakuten.exception
-│           └── com.rakuten.repository
-│           └── com.rakuten.service
-│           └── com.rakuten.serviceimpl
+│           ├── com.dnd│
+│           ├── com.dnd.constants
+│           ├── com.dnd.controller
+│           ├── com.dnd.dto
+│           ├── com.dnd.model
+│           ├── com.dnd.exception
+│           └── com.dnd.repository
+│           └── com.dnd.service
+│           └── com.dnd.serviceimpl
 ├── src
 │   └── main
 │       └── resources
@@ -105,9 +105,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── test
 │       └── java
-│           └── com.rakuten
-│           └── com.rakuten.controller
-│           └── com.rakuten.service.impl
+│           └── com.dnd
+│           └── com.dnd.controller
+│           └── com.dnd.service.impl
 │ 
 ├── JRE System Library
 ├── Maven Dependencies
